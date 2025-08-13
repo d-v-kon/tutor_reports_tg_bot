@@ -13,7 +13,7 @@ def send_new_record(new_data: str, teacher_id: int):
     else:
         lesson_salary = 150
 
-    with psycopg.connect("dbname=repeat-school user=postgres password=1234") as db_conn:
+    with psycopg.connect("dbname= user=postgres password=") as db_conn:
         with db_conn.cursor() as cur:
             cur.execute("""
             UPDATE 
@@ -52,7 +52,7 @@ def export_from_db(requested_data: str):
 
 
 def get_last_lesson(teacher_id: int):
-    with psycopg.connect("dbname=repeat-school user=postgres password=1234") as db_conn:
+    with psycopg.connect("dbname= user=postgres password=") as db_conn:
         with db_conn.cursor() as cur:
             last_lesson_raw_record = cur.execute("""
             SELECT 
@@ -85,7 +85,7 @@ def edit_table():
 
 
 def add_teacher(teacher_name, teacher_telegram_id):
-    with psycopg.connect("dbname=repeat-school user=postgres password=1234") as db_conn:
+    with psycopg.connect("dbname= user=postgres password=") as db_conn:
         with db_conn.cursor() as cur:
             cur.execute("""
             INSERT INTO 
@@ -98,7 +98,7 @@ def add_teacher(teacher_name, teacher_telegram_id):
 
 
 def main():
-    with psycopg.connect("dbname=repeat-school user=postgres password=1234") as conn:
+    with psycopg.connect("dbname= user=postgres password=") as conn:
         # Open a cursor to perform database operations
         with conn.cursor() as cur:
             cur.execute("""
@@ -127,3 +127,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
