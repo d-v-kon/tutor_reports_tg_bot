@@ -54,7 +54,7 @@ async def get_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 
 def main():
-    application = Application.builder().token("6649693798:AAEHiQTKv-BPOCGk1WRa5eqrgAr1eXzyLRk").build()
+    application = Application.builder().token("").build()
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("registration", registration))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, get_text))
@@ -63,3 +63,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
